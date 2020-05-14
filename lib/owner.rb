@@ -2,9 +2,12 @@ class Owner
   # code goes here
   attr_reader :name
   @@all = []
+  @@pets = []
   def initialize(name)
     @name = name
     @@all << self
+    @cats = []
+    @dogs = []
   end
 
   def species(species="human")
