@@ -2,9 +2,9 @@ class Owner
   # code goes here
   attr_reader :name
   @@all = []
-  @@count = 0
   def initialize(name)
     @name = name
+    @@all << self
   end
 
   def species(species="human")
@@ -15,23 +15,20 @@ class Owner
     "I am a #{species}."
   end
 
-  def save
-    @@all << self
-    @@count += 1
-  end
 
   def self.all
     @@all
   end
 
   def self.count
-    @@count
+    @@all.length
   end
 
-  def reset_all
-
+  def self.reset_all
+      @@all.clear
   end
 
-
+  def cats
+    Cat.new.collect {|cat|}
 
 end
