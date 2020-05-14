@@ -1,4 +1,4 @@
-class Cat
+class Dog
   attr_accessor :owner, :mood
   attr_reader :name
   # code goes here
